@@ -1,0 +1,24 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="form-group">
+				<div *ngFor="let checkbox of checkboxes">
+					<label for="">
+  <input type="checkbox" 
+  [checked]="checkbox.checked"
+  [(ngModel)]="checkbox.checked"                  class="checkbox-inline"> 
+  {{checkbox.name}} <br>
+</label> 
+ </div>
+ <pre *ngIf="checkedBoxs.length > 0">{{ checkedBoxs | json}}</pre>
+ <button class="btn btn-default btn-sm" (click)="fnOnGetChecked()">Get Checked</button> 
+
+</div>
+    </div>
+  </div>
+<div class="row">
+  <div class="col-xs-12">
+    <pre>  {{checkboxes | json }} </pre>
+  </div>
+</div>
+</div>

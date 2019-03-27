@@ -1,0 +1,26 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12"> 
+			<form [formGroup]="reactForm" (ngSubmit)="fnOnSubmit()">
+
+				<div class="form-group">
+					<div *ngFor="let checkboxo of controlls; let i = index" formArrayName="skills">
+						<label for="">
+  <input type="checkbox"  class="checkbox-inline" [formControlName]="i"> 
+  {{ checkboxes[i].name }}
+</label> 
+ </div>
+  <div *ngIf="!reactForm.valid">At least one order must be selected</div>
+ <!-- <pre *ngIf="checkedBoxs.length > 0">{{ checkedBoxs | json}}</pre> -->
+ <button class="btn btn-default btn-sm" type="submit">Get Checked</button> 
+
+</div>
+  </form>
+    </div>
+  </div>
+<div class="row" *ngIf="checkboxes.length > 0">
+  <div class="col-xs-12">
+    <pre>  {{checkboxes | json }} </pre>
+  </div>
+</div>
+</div>
